@@ -18,6 +18,37 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\Author.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\AuthorBase.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\Book.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\BookBase.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\Customer.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\CustomerBase.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\Employee.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\Menu.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\Person.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\PersonBase.cpp" />
+    <ClCompile Include="..\..\2 курс\НП\Task2\Task2\Task2\Source.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\Author.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\AuthorBase.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\Book.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\BookBase.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\Customer.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\CustomerBase.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\Employee.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\Menu.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\Person.h" />
+    <ClInclude Include="..\..\2 курс\НП\Task2\Task2\Task2\PersonBase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\2 курс\НП\Task2\Task2\Task2\Authors.txt" />
+    <Text Include="..\..\2 курс\НП\Task2\Task2\Task2\Books.txt" />
+    <Text Include="..\..\2 курс\НП\Task2\Task2\Task2\Customers.txt" />
+    <Text Include="..\..\2 курс\НП\Task2\Task2\Task2\Employees.txt" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -138,25 +169,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Author.cpp" />
-    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\AuthorBase.cpp" />
-    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Book.cpp" />
-    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\BookBase.cpp" />
-    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Menu.cpp" />
-    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Source.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\Author.h" />
-    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\AuthorBase.h" />
-    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\Book.h" />
-    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\BookBase.h" />
-    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\Menu.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\..\2 курс\НП\Task1\Task1\Task1\Authors.txt" />
-    <Text Include="..\..\2 курс\НП\Task1\Task1\Task1\Books.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
