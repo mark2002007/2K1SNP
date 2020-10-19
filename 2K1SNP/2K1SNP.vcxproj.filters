@@ -14,4 +14,49 @@
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Author.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\AuthorBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Book.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\BookBase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\2 курс\НП\Task1\Task1\Task1\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\Author.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\AuthorBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\Book.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\BookBase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\2 курс\НП\Task1\Task1\Task1\Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\2 курс\НП\Task1\Task1\Task1\Authors.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="..\..\2 курс\НП\Task1\Task1\Task1\Books.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>
