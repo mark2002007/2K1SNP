@@ -20,7 +20,7 @@ public:
 	int GetLastInd() { return lastInd; }
 	void ShowBooks();
 
-	void Add(Book& = *(new Book));
+	void Add(Book & = *(new Book));
 	void Remove(int);
 };
 

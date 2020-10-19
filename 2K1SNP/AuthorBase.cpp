@@ -8,11 +8,11 @@ AuthorBase::AuthorBase(int size) {
 	this->author_list = new Author[size];
 }
 
-AuthorBase::~AuthorBase(){
+AuthorBase::~AuthorBase() {
 	delete[]author_list;
 }
 
-void AuthorBase::ShowAuthors(){
+void AuthorBase::ShowAuthors() {
 	for (int i = 0; i <= lastInd; i++) {
 		cout << i + 1 << endl;
 		cout << "First Name : " << author_list[i].GetFName() << endl;

@@ -1,4 +1,4 @@
-﻿#include <iostream>
+#include <iostream>
 #include "Book.h"
 #include "Author.h"
 #include "BookBase.h"

@@ -12,8 +12,8 @@ private:
 	int pages;
 	string ISBN;
 public:
-	Book(Author& = *(new Author), string = "None", int = 2020, int = 1, string = "999999999999X");
-	
+	Book(Author & = *(new Author), string = "None", int = 2020, int = 1, string = "999999999999X");
+
 	string GetAuthorFName() { return author->GetFName(); }
 	string GetAuthorLName() { return author->GetLName(); }
 	string GetAuthorMName() { return author->GetMName(); }
