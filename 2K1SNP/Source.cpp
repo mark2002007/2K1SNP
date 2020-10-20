@@ -1,7 +1,4 @@
 #include <iostream>
-#include "Book.h"
-#include "Author.h"
-#include "AuthorBase.h" 
 #include "Menu.h"
 using namespace std;
 
