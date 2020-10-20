@@ -51,9 +51,6 @@
     <ClCompile Include="Repository.cpp">
       <Filter>Source Files\Repositories</Filter>
     </ClCompile>
-    <ClCompile Include="PersonRepository.cpp">
-      <Filter>Source Files\Repositories</Filter>
-    </ClCompile>
     <ClCompile Include="AuthorRepository.cpp">
       <Filter>Source Files\Repositories</Filter>
     </ClCompile>
@@ -104,9 +101,6 @@
       <Filter>Header Files\Entities</Filter>
     </ClInclude>
     <ClInclude Include="Repository.h">
-      <Filter>Header Files\Repositories</Filter>
-    </ClInclude>
-    <ClInclude Include="PersonRepository.h">
       <Filter>Header Files\Repositories</Filter>
     </ClInclude>
     <ClInclude Include="AuthorRepository.h">

@@ -29,7 +29,6 @@
     <ClCompile Include="EmployeeRepository.cpp" />
     <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Person.cpp" />
-    <ClCompile Include="PersonRepository.cpp" />
     <ClCompile Include="Repository.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
@@ -51,7 +50,6 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Person.h" />
-    <ClInclude Include="PersonRepository.h" />
     <ClInclude Include="Repository.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
