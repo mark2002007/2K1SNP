@@ -1,5 +1,8 @@
 #include <iostream>
-#include "PersonBase.h"
+#include "AuthorRepository.h"
+#include "CustomerRepository.h"
+#include "EmployeeRepository.h"
+#include "BookRepository.h"
 using namespace std;
 
 #ifndef MENU_H
@@ -11,19 +14,20 @@ private:
 	int pPos = 1;
 	string list_ind;
 	string title;
-	/*AuthorBase* ab;*/
-	PersonBase* pb;
-	BookBase* bb;
-
+	AuthorRepository authorRepository = AuthorRepository(true);
+	CustomerRepository customerRepository = CustomerRepository(true);
+	EmployeeRepository employeeRepository = EmployeeRepository(true);
+	BookRepository bookRepository = BookRepository(&authorRepository, true);
 public:
 	//ctr
-	Menu(string = "", string = "", string = "<", PersonBase & = *(new PersonBase(10)), BookBase & = *(new BookBase(10)));
+	Menu(string = "", string = "", string = "<");
 	//Add/Remove
 	void AddAuthor();
 	void AddCustomer();
 	void AddEmployee();
 	void AddBook();
 
+	void RemoveBook();
 	void RemoveAuthor();
 	void RemoveCustomer();
 	void RemoveEmployee();
@@ -39,7 +43,6 @@ public:
 	void ChangeIndexation();
 	void ChangePointer();
 
-	void WriteToFile();
 };
 
 #endif // !MENU_H

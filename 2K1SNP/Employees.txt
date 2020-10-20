@@ -1,3 +1,4 @@
 
-Emp Lo Yee 1000 2
-Yee Lo Emp 5000 5
+Emp Lo Yee 1000 3
+Yee Emp Lo 2000 2
+Lo Yee Emp 3000 1

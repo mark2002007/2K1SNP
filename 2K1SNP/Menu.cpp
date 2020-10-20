@@ -1,43 +1,16 @@
 #include<iostream>
 #include<fstream>
-#include"Author.h"
-#include"Customer.h"
+#include "Author.h"
+#include "Customer.h"
 #include "Employee.h"
-#include"AuthorBase.h"
-#include"BookBase.h"
-#include"Menu.h"
+#include "Menu.h"
 using namespace std;
 
-Menu::Menu(string title, string list_ind, string pointer, PersonBase& pb, BookBase& bb) {
+Menu::Menu(string title, string list_ind, string pointer) {
 	this->title = title;
 	this->pointer = pointer;
 	if (list_ind != "ORDERED" && list_ind != "UNORDERED") throw "List indexation should be ORDERED or UNORDERED!!!";
 	this->list_ind = list_ind;
-	this->pb = &pb;
-	this->bb = &bb;
-
-	ifstream a_in("Authors.txt");
-	ifstream c_in("Customers.txt");
-	ifstream e_in("Employees.txt");
-	ifstream b_in("Books.txt");
-
-	char fName[50], mName[50], lName[50], A[50], B[50];
-	while (a_in >> fName >> mName >> lName >> A >> B) pb.Add(*(new Author(fName, mName, lName, atoi(A), atoi(B))));
-	while (c_in >> fName >> mName >> lName >> A >> B) pb.Add(*(new Customer(fName, mName, lName, atoi(A), atof(B))));
-	while (e_in >> fName >> mName >> lName >> A >> B) pb.Add(*(new Employee(fName, mName, lName, atoi(A), atoi(B))));
-	while (!b_in.eof()) {
-		char author_pos[10], title[50], publication_year[10], pages[10], ISBN[15];
-		b_in.get(author_pos, 50, ','); b_in.get();
-		b_in.get(title, 50, ','); b_in.get();
-		b_in.get(publication_year, 50, ','); b_in.get();
-		b_in.get(pages, 50, ','); b_in.get();
-		b_in.getline(ISBN, 50);
-		bb.Add(*(new Book(*((Author*)this->pb->Get("Author", atoi(author_pos))), title, atoi(publication_year), atoi(pages), ISBN)));
-	}
-	b_in.close();
-	e_in.close();
-	c_in.close();
-	a_in.close();
 }
 
 void Menu::AddAuthor() {
@@ -51,9 +24,7 @@ void Menu::AddAuthor() {
 	cout << "Year of birth : "; cin >> YOB;
 	cout << "Year of death : "; cin >> YOD;
 
-	this->pb->Add(*(new Author(fName, mName, lName, YOB, YOD)));
-	
-	WriteToFile();
+	authorRepository.Add(*(new Author(fName, mName, lName, YOB, YOD)));
 }
 
 void Menu::AddCustomer() {
@@ -68,9 +39,8 @@ void Menu::AddCustomer() {
 	cout << "Balance : "; cin >> balance;
 	cout << "Amount of purchases : "; cin >> purchases;
 
-	this->pb->Add(*(new Customer(fName, mName, lName, balance, purchases)));
+	customerRepository.Add(*(new Customer(fName, mName, lName, balance, purchases)));
 
-	WriteToFile();
 }
 
 void Menu::AddEmployee() {
@@ -84,9 +54,7 @@ void Menu::AddEmployee() {
 	cout << "Salary : "; cin >> salary;
 	cout << "Rank : "; cin >> rank;
 
-	this->pb->Add(*(new Employee(fName, mName, lName, salary, rank)));
-	
-	WriteToFile();
+	employeeRepository.Add(*(new Employee(fName, mName, lName, salary, rank)));
 }
 
 void Menu::AddBook() {
@@ -107,36 +75,35 @@ void Menu::AddBook() {
 	cout << "ISBN : ";
 	cin >> ISBN;
 
-	this->bb->Add(*(new Book( *((Author*)pb->Get("Author",author_pos)), title, publication_year, pages, ISBN)));
-
-	ofstream fout("Books.txt", ios::app);
-	fout << endl << author_pos << "," << title << "," << publication_year << "," << pages << "," << ISBN;
-	fout.close();
+	this->bookRepository.Add(*(new Book( *(authorRepository.Get(author_pos-1)) , title, publication_year, pages, ISBN)));
 }
 
+void Menu::RemoveBook() {
+	system("cls");
+	int pos;
+	cout << "Book to remove (number) : "; cin >> pos;
+	bookRepository.Remove(pos);
+}
 
 void Menu::RemoveAuthor() {
 	system("cls");
 	int pos;
 	cout << "Author to remove (number) : "; cin >> pos;
-	pb->Remove("Author",pos);
-	WriteToFile();
+	authorRepository.Remove(pos);
 }
 
 void Menu::RemoveCustomer() {
 	system("cls");
 	int pos;
 	cout << "Customer to remove (number) : "; cin >> pos;
-	pb->Remove("Customer", pos);
-	WriteToFile();
+	customerRepository.Remove(pos);
 }
 
 void Menu::RemoveEmployee() {
 	system("cls");
 	int pos;
 	cout << "Employee to remove (number) : "; cin >> pos;
-	pb->Remove("Customer", pos);
-	WriteToFile();
+	employeeRepository.Remove(pos);
 }
 
 void Menu::ShowMenu() {
@@ -281,7 +248,7 @@ void Menu::ShowRemove() {
 			else if (list_ind == "UNORDERED") cout << "*";
 			switch (i + 1) {
 			case 1:
-				cout << "Book*   ";
+				cout << "Book    ";
 				break;
 			case 2:
 				cout << "Author  ";
@@ -312,7 +279,7 @@ void Menu::ShowRemove() {
 		case 'e':
 			switch (pPos) {
 			case 1:
-				//RemoveBook();
+				RemoveBook();
 				break;
 			case 2:
 				RemoveAuthor();
@@ -377,19 +344,19 @@ void Menu::ShowShow() {
 			system("cls");
 			switch (pPos) {
 			case 1:
-				bb->ShowBooks();
+				bookRepository.Show();
 				system("pause");
 				break;
 			case 2:
-				pb->ShowAuthors();
+				authorRepository.Show();
 				system("pause");
 				break;
 			case 3:
-				pb->ShowCustomers();
+				customerRepository.Show();
 				system("pause");
 				break;
 			case 4:
-				pb->ShowEmployees();
+				employeeRepository.Show();
 				system("pause");
 				break;
 			case 5:
@@ -475,37 +442,4 @@ void Menu::ChangePointer() {
 	system("cls");
 	cout << "Enter pointer : ";
 	cin >> pointer;
-}
-
-void Menu::WriteToFile() {
-	ofstream a_out("Authors.txt");
-	ofstream c_out("Customers.txt");
-	ofstream e_out("Employees.txt");
-	int ind = pb->GetLastInd();
-	for (int i = 0; i <= ind; i++) {
-		if (static_cast<string>(typeid((pb->IndGet(i))[0]).name()) == "class Author") {
-			a_out << endl << pb->IndGet(i)->GetFName()
-				<< " " << pb->IndGet(i)->GetMName()
-				<< " " << pb->IndGet(i)->GetLName()
-				<< " " << ((Author*)pb->IndGet(i))->GetYOB()
-				<< " " << ((Author*)pb->IndGet(i))->GetYOD();
-		}
-		else if (static_cast<string>(typeid((pb->IndGet(i))[0]).name()) == "class Customer") {
-			c_out << endl << pb->IndGet(i)->GetFName()
-				<< " " << pb->IndGet(i)->GetMName()
-				<< " " << pb->IndGet(i)->GetLName()
-				<< " " << ((Customer*)pb->IndGet(i))->GetBalance()
-				<< " " << ((Customer*)pb->IndGet(i))->GetPurchases();
-		}
-		else if (static_cast<string>(typeid((pb->IndGet(i))[0]).name()) == "class Employee") {
-			e_out << endl << pb->IndGet(i)->GetFName()
-				<< " " << pb->IndGet(i)->GetMName()
-				<< " " << pb->IndGet(i)->GetLName()
-				<< " " << ((Employee*)pb->IndGet(i))->GetSalary()
-				<< " " << ((Employee*)pb->IndGet(i))->GetRank();
-		}
-	}
-	e_out.close();
-	c_out.close();
-	a_out.close();
 }

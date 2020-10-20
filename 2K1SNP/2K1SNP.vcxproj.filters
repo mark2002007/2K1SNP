@@ -13,5 +13,113 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\Entities">
+      <UniqueIdentifier>{875ffe07-0521-4e20-b917-96c35072f958}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Entities">
+      <UniqueIdentifier>{75b7ce66-d675-4b75-b92b-44cada87eabe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Repositories">
+      <UniqueIdentifier>{0bd88fc1-9b54-4e42-86b8-562441cf6f78}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Repositories">
+      <UniqueIdentifier>{99f7b64d-ac21-4319-84ca-36e064a07b5c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Menu.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Author.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Book.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Person.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Employee.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Customer.cpp">
+      <Filter>Source Files\Entities</Filter>
+    </ClCompile>
+    <ClCompile Include="Repository.cpp">
+      <Filter>Source Files\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="PersonRepository.cpp">
+      <Filter>Source Files\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="AuthorRepository.cpp">
+      <Filter>Source Files\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomerRepository.cpp">
+      <Filter>Source Files\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="EmployeeRepository.cpp">
+      <Filter>Source Files\Repositories</Filter>
+    </ClCompile>
+    <ClCompile Include="BookRepository.cpp">
+      <Filter>Source Files\Repositories</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Employees.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Customers.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Books.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Authors.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Menu.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Author.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Book.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Customer.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Employee.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Person.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Header Files\Entities</Filter>
+    </ClInclude>
+    <ClInclude Include="Repository.h">
+      <Filter>Header Files\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="PersonRepository.h">
+      <Filter>Header Files\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="AuthorRepository.h">
+      <Filter>Header Files\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerRepository.h">
+      <Filter>Header Files\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="EmployeeRepository.h">
+      <Filter>Header Files\Repositories</Filter>
+    </ClInclude>
+    <ClInclude Include="BookRepository.h">
+      <Filter>Header Files\Repositories</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

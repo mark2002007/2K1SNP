@@ -12,3 +12,17 @@ Book::Book(Author& author, string title, int publication_year, int pages, string
 	if (ISBN.length() != 13) throw "ISBN ERROR";
 	this->ISBN = ISBN;
 }
+
+Book::~Book() {
+	delete[] author;
+}
+
+void Book::ShowInfo()
+{
+	cout << "Author : " << author->GetFName() << " " << author->GetMName() << " " << author->GetLName() << endl;
+	cout << "Title : " << title << endl;
+	cout << "Publication Year : " << publication_year << endl;
+	cout << "Number of Pages : " << pages << endl;
+	cout << "ISBN : " << ISBN << endl;
+}
+

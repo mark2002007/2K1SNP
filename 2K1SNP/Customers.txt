@@ -1,3 +1,4 @@
 
-Cus To Mer 88 5
-Mer To Cus 36 4
+Cus To Mer 100 3
+Mer Cus To 200 2
+To Mer Cus 300 1

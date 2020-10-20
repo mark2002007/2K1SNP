@@ -1,10 +1,11 @@
 #include <iostream>
+#include "Entity.h"
 using namespace std;
 
 #ifndef PERSON_H
 #define PERSON_H
 
-class Person {
+class Person : public Entity{
 protected:
 	string fName;
 	string lName;
