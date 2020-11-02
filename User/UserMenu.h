@@ -23,17 +23,6 @@ private:
 public:
 	//ctr
 	Menu(string = "", string = "", string = "<");
-	//Add/Remove
-	//void AddAuthor();
-	//void AddCustomer();
-	//void AddEmployee();
-	//void AddBook();
-
-	//void RemoveBook();
-	//void RemoveAuthor();
-	//void RemoveCustomer();
-	//void RemoveEmployee();
-	//void RemoveBook(); *
 
 	void ShowMenu();
 	void ShowAdd();
