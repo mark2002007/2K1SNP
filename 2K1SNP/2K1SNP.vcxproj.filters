@@ -30,9 +30,6 @@
     <ClCompile Include="Menu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Source.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Author.cpp">
       <Filter>Source Files\Entities</Filter>
     </ClCompile>
