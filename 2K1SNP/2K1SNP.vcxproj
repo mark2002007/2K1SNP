@@ -20,16 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Author.cpp" />
-    <ClCompile Include="AuthorRepository.cpp" />
     <ClCompile Include="Book.cpp" />
     <ClCompile Include="BookRepository.cpp" />
     <ClCompile Include="Customer.cpp" />
-    <ClCompile Include="CustomerRepository.cpp" />
     <ClCompile Include="Employee.cpp" />
-    <ClCompile Include="EmployeeRepository.cpp" />
-    <ClCompile Include="Menu.cpp" />
     <ClCompile Include="Person.cpp" />
-    <ClCompile Include="Repository.cpp" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Authors.txt" />
@@ -39,15 +34,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Author.h" />
-    <ClInclude Include="AuthorRepository.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="BookRepository.h" />
     <ClInclude Include="Customer.h" />
-    <ClInclude Include="CustomerRepository.h" />
     <ClInclude Include="Employee.h" />
-    <ClInclude Include="EmployeeRepository.h" />
-    <ClInclude Include="Entity.h" />
-    <ClInclude Include="Menu.h" />
     <ClInclude Include="Person.h" />
     <ClInclude Include="Repository.h" />
   </ItemGroup>
@@ -66,7 +56,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>

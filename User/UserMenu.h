@@ -1,14 +1,13 @@
 #pragma once
 #include <iostream>
-#include "AuthorRepository.h"
-#include "CustomerRepository.h"
-#include "EmployeeRepository.h"
+#include "Repository.h"
 #include "BookRepository.h"
 
-using namespace std;
+#include "Author.h"
+#include "Customer.h"
+#include "Employee.h"
 
-#ifndef MENU_H
-#define MENU_H
+using namespace std;
 
 class Menu {
 private:
@@ -16,10 +15,10 @@ private:
 	int pPos = 1;
 	string list_ind;
 	string title;
-	AuthorRepository authorRepository = AuthorRepository(true);
-	CustomerRepository customerRepository = CustomerRepository(true);
-	EmployeeRepository employeeRepository = EmployeeRepository(true);
-	BookRepository bookRepository = BookRepository(&authorRepository, true);
+	Repository<Author> authorRepository = Repository<Author>(true);
+	Repository<Customer> customerRepository = Repository<Customer>(true);
+	Repository<Employee> employeeRepository = Repository<Employee>(true);
+	BookRepository bookRepository = BookRepository(authorRepository, true);
 public:
 	//ctr
 	Menu(string = "", string = "", string = "<");
@@ -33,7 +32,5 @@ public:
 	void ChangeTitle();
 	void ChangeIndexation();
 	void ChangePointer();
-
 };
 
-#endif // !MENU_H

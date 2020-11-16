@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include "Person.h"
 using namespace std;
 
@@ -14,6 +15,11 @@ public:
 	void ShowInfo();
 	int GetYOB() { return yob; }
 	int GetYOD() { return yod; }
+	string GetStorageName() { return "Authors.txt"; }
+
+	friend ifstream& operator>>(ifstream& fin, Author& a);
+	friend ofstream& operator<<(ofstream& fout, Author& a);
+	friend ostream& operator<<(ostream& out, Author& a);
 };
 
 #endif

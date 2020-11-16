@@ -1,18 +1,21 @@
 #pragma once
 
 #include "Repository.h"
-#include "AuthorRepository.h"
 #include "Book.h"
 
-class BookRepository : public Repository {
+class BookRepository {
 private:
-	AuthorRepository* arep;
+	Book** data;
+	int maxSize;
+	int current;
+	bool sync;
+	Repository<Author>* arep;
 public:
-	BookRepository(AuthorRepository* arep, bool sync = false);
+	BookRepository(Repository<Author>& arep, bool sync = false);
 	~BookRepository();
 
 	void Add(Book& book);
-	void Remove(int num = 1);
+	void Remove(int ind = 0);
 	void Show();
 
 	void ReadFromStorage();

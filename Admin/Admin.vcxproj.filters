@@ -27,4 +27,18 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Authors.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Books.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Customers.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+    <Text Include="Employees.txt">
+      <Filter>Resource Files</Filter>
+    </Text>
+  </ItemGroup>
 </Project>

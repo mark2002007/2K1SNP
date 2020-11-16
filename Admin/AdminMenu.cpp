@@ -1,9 +1,6 @@
 #include<iostream>
 #include<fstream>
 
-#include "Author.h"
-#include "Customer.h"
-#include "Employee.h"
 #include "AdminMenu.h"
 
 using namespace std;
@@ -42,7 +39,6 @@ void Menu::AddCustomer() {
 	cout << "Amount of purchases : "; cin >> purchases;
 
 	customerRepository.Add(*(new Customer(fName, mName, lName, balance, purchases)));
-
 }
 
 void Menu::AddEmployee() {
@@ -77,21 +73,21 @@ void Menu::AddBook() {
 	cout << "ISBN : ";
 	cin >> ISBN;
 
-	this->bookRepository.Add(*(new Book(*(authorRepository.Get(author_pos - 1)), title, publication_year, pages, ISBN)));
+	this->bookRepository.Add(*(new Book(authorRepository[author_pos-1], title, publication_year, pages, ISBN)));
 }
 
 void Menu::RemoveBook() {
 	system("cls");
 	int pos;
 	cout << "Book to remove (number) : "; cin >> pos;
-	bookRepository.Remove(pos);
+	bookRepository.Remove(pos-1);
 }
 
 void Menu::RemoveAuthor() {
 	system("cls");
 	int pos;
 	cout << "Author to remove (number) : "; cin >> pos;
-	authorRepository.Remove(pos);
+	authorRepository.Remove(pos-1);
 }
 
 void Menu::RemoveCustomer() {

@@ -4,7 +4,7 @@ using namespace std;
 #ifndef BOOK_H
 #define BOOK_H
 
-class Book : public Entity {
+class Book{
 private:
 	Author* author;
 	string title;
@@ -21,12 +21,10 @@ public:
 	string GetAuthorMName() { return author->GetMName(); }
 	int GetAuthorYOB() { return author->GetYOB(); }
 	int GetAuthorYOD() { return author->GetYOD(); }
-
 	string GetTitle() { return title; }
 	int GetPublicationYear() { return publication_year; }
 	int GetPages() { return pages; }
 	string GetISBN() { return ISBN; }
-
 };
 
 #endif // !BOOK_H

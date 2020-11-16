@@ -154,6 +154,12 @@
   <ItemGroup>
     <ClInclude Include="UserMenu.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="Authors.txt" />
+    <Text Include="Books.txt" />
+    <Text Include="Customers.txt" />
+    <Text Include="Employees.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

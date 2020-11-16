@@ -13,6 +13,11 @@ public:
 	void ShowInfo();
 	float GetBalance() { return balance; }
 	int GetPurchases() { return purchases; }
+	string GetStorageName() { return "Customers.txt"; }
+
+	friend ifstream& operator>>(ifstream& fin, Customer& c);
+	friend ofstream& operator<<(ofstream& fout, Customer& c);
+	friend ostream& operator<<(ostream& out, Customer& c);
 };
 
 #endif // !CUSTOMER_H

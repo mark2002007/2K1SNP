@@ -15,6 +15,11 @@ public:
 	void ShowInfo();
 	int GetSalary() { return salary; }
 	int GetRank() { return rank; }
+	string GetStorageName() { return "Employees.txt"; }
+
+	friend ifstream& operator>>(ifstream& fin, Employee& a);
+	friend ofstream& operator<<(ofstream& fout, Employee& a);
+	friend ostream& operator<<(ostream& out, Employee& a);
 };
 
 #endif // !EMPLOYEE_H

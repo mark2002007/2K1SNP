@@ -3,7 +3,7 @@
 using namespace std;
 
 int main() {
-	Menu m1("User Menu", "ORDERED", "<");
-	m1.ShowMenu();
+	Menu m2("User Menu", "ORDERED", "<");
+	m2.ShowMenu();
 	return 0;
 }
