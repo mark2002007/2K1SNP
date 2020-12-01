@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -149,10 +149,21 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdminMenu.cpp" />
+    <ClCompile Include="CommandLog.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddAuthorCommand.h" />
+    <ClInclude Include="AddBookCommand.h" />
+    <ClInclude Include="AddCustomerCommand.h" />
+    <ClInclude Include="AddEmployeeCommand.h" />
     <ClInclude Include="AdminMenu.h" />
+    <ClInclude Include="Command.h" />
+    <ClInclude Include="CommandLog.h" />
+    <ClInclude Include="RemoveAuthorCommand.h" />
+    <ClInclude Include="RemoveBookCommand.h" />
+    <ClInclude Include="RemoveCustomerCommand.h" />
+    <ClInclude Include="RemoveEmployeeCommand.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="Authors.txt" />

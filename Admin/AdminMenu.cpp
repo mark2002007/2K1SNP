@@ -10,9 +10,12 @@ Menu::Menu(string title, string list_ind, string pointer) {
 	this->pointer = pointer;
 	if (list_ind != "ORDERED" && list_ind != "UNORDERED") throw "List indexation should be ORDERED or UNORDERED!!!";
 	this->list_ind = list_ind;
+	a_b_com = AddBookCommand(this);  a_a_com = AddAuthorCommand(this); a_c_com = AddCustomerCommand(this); a_e_com = AddEmployeeCommand(this);
+	r_b_com = RemoveBookCommand(this);  r_a_com = RemoveAuthorCommand(this); r_c_com = RemoveCustomerCommand(this); r_e_com = RemoveEmployeeCommand(this);
 }
 
 void Menu::AddAuthor() {
+	
 	string fName, mName, lName;
 	int YOB, YOD;
 	system("cls");
@@ -213,16 +216,16 @@ void Menu::ShowAdd() {
 		case 'e':
 			switch (pPos) {
 			case 1:
-				AddBook();
+				a_b_com.execute();
 				break;
 			case 2:
-				AddAuthor();
+				a_a_com.execute();
 				break;
 			case 3:
-				AddCustomer();
+				a_c_com.execute();
 				break;
 			case 4:
-				AddEmployee();
+				a_e_com.execute();
 				break;
 			case 5:
 				exit = true;
@@ -277,16 +280,16 @@ void Menu::ShowRemove() {
 		case 'e':
 			switch (pPos) {
 			case 1:
-				RemoveBook();
+				r_b_com.execute();
 				break;
 			case 2:
-				RemoveAuthor();
+				r_a_com.execute();
 				break;
 			case 3:
-				RemoveCustomer();
+				r_c_com.execute();
 				break;
 			case 4:
-				RemoveEmployee();
+				r_e_com.execute();
 				break;
 			case 5:
 				exit = true;
@@ -299,7 +302,7 @@ void Menu::ShowRemove() {
 
 void Menu::ShowShow() {
 	bool exit = false;
-	int rowN = 5, pPos = 1;
+	int rowN = 6, pPos = 1;
 	char user_input;
 	while (!exit) {
 		//Cout Menu
@@ -322,6 +325,9 @@ void Menu::ShowShow() {
 				cout << "Employees";
 				break;
 			case 5:
+				cout << "Log      ";
+				break;
+			case 6:
 				cout << "Exit     ";
 				break;
 			}
@@ -358,6 +364,10 @@ void Menu::ShowShow() {
 				system("pause");
 				break;
 			case 5:
+				CommandLog::GetInstance().ShowLog();
+				system("pause");
+				break;
+			case 6:
 				exit = true;
 				break;
 			}
@@ -440,4 +450,51 @@ void Menu::ChangePointer() {
 	system("cls");
 	cout << "Enter pointer : ";
 	cin >> pointer;
+}
+
+void AddBookCommand::execute()
+{
+	m->AddBook();
+	CommandLog::GetInstance().Log(new AddBookCommand);
+}
+
+void AddAuthorCommand::execute() {
+	m->AddAuthor();
+	CommandLog::GetInstance().Log(new AddAuthorCommand);
+}
+
+void AddCustomerCommand::execute()
+{
+	m->AddCustomer();
+	CommandLog::GetInstance().Log(new AddCustomerCommand);
+}
+
+void AddEmployeeCommand::execute()
+{
+	m->AddEmployee();
+	CommandLog::GetInstance().Log(new AddEmployeeCommand);
+}
+
+void RemoveBookCommand::execute()
+{
+	m->RemoveBook();
+	CommandLog::GetInstance().Log(new RemoveBookCommand);
+}
+
+void RemoveAuthorCommand::execute()
+{
+	m->RemoveAuthor();
+	CommandLog::GetInstance().Log(new RemoveAuthorCommand);
+}
+
+void RemoveCustomerCommand::execute()
+{
+	m->RemoveCustomer();
+	CommandLog::GetInstance().Log(new RemoveCustomerCommand);
+}
+
+void RemoveEmployeeCommand::execute()
+{
+	m->RemoveEmployee();
+	CommandLog::GetInstance().Log(new RemoveEmployeeCommand);
 }

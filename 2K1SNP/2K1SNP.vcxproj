@@ -33,6 +33,7 @@
     <Text Include="Employees.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Admin\CommandLog.h" />
     <ClInclude Include="Author.h" />
     <ClInclude Include="Book.h" />
     <ClInclude Include="BookRepository.h" />

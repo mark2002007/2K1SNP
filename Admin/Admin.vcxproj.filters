@@ -13,6 +13,24 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Commands">
+      <UniqueIdentifier>{91946b1f-3502-409c-b9a8-0fc230bad417}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Commands">
+      <UniqueIdentifier>{0cb1eac0-75ea-4419-a542-e69fd39e9992}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands\Add">
+      <UniqueIdentifier>{19b9c9fb-5d68-4d3f-8e98-16c5c254e643}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands\Remove">
+      <UniqueIdentifier>{846a6056-735f-43b6-a17e-f7157103beed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands\Show">
+      <UniqueIdentifier>{c9aeb6d6-0701-4ccf-bf89-4058d99882ef}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Commands\Log">
+      <UniqueIdentifier>{d10e10c9-ae68-4ab1-88d6-f593381adf97}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Source.cpp">
@@ -21,10 +39,43 @@
     <ClCompile Include="AdminMenu.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="CommandLog.cpp">
+      <Filter>Header Files\Commands\Log</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdminMenu.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Command.h">
+      <Filter>Header Files\Commands</Filter>
+    </ClInclude>
+    <ClInclude Include="AddAuthorCommand.h">
+      <Filter>Header Files\Commands\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="AddBookCommand.h">
+      <Filter>Header Files\Commands\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="AddCustomerCommand.h">
+      <Filter>Header Files\Commands\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="AddEmployeeCommand.h">
+      <Filter>Header Files\Commands\Add</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveAuthorCommand.h">
+      <Filter>Header Files\Commands\Remove</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveCustomerCommand.h">
+      <Filter>Header Files\Commands\Remove</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveEmployeeCommand.h">
+      <Filter>Header Files\Commands\Remove</Filter>
+    </ClInclude>
+    <ClInclude Include="RemoveBookCommand.h">
+      <Filter>Header Files\Commands\Remove</Filter>
+    </ClInclude>
+    <ClInclude Include="CommandLog.h">
+      <Filter>Header Files\Commands\Log</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

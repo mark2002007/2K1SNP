@@ -82,5 +82,8 @@
     <ClInclude Include="BookRepository.h">
       <Filter>Header Files\Repositories</Filter>
     </ClInclude>
+    <ClInclude Include="..\Admin\CommandLog.h">
+      <Filter>Source Files\Entities</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

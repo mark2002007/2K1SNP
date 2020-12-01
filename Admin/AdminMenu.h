@@ -1,5 +1,4 @@
 #pragma once
-#include <iostream>
 #include "Repository.h"
 #include "BookRepository.h"
 
@@ -7,10 +6,18 @@
 #include "Customer.h"
 #include "Employee.h"
 
-using namespace std;
+#include "AddBookCommand.h"
+#include "AddAuthorCommand.h"
+#include "AddCustomerCommand.h"
+#include "AddEmployeeCommand.h"
 
-#ifndef MENU_H
-#define MENU_H
+#include "RemoveBookCommand.h"
+#include "RemoveAuthorCommand.h"
+#include "RemoveCustomerCommand.h"
+#include "RemoveEmployeeCommand.h"
+
+#include "CommandLog.h"
+
 
 class Menu {
 private:
@@ -18,6 +25,8 @@ private:
 	int pPos = 1;
 	string list_ind;
 	string title;
+	AddBookCommand a_b_com; AddAuthorCommand a_a_com; AddCustomerCommand a_c_com; AddEmployeeCommand a_e_com;
+	RemoveBookCommand r_b_com; RemoveAuthorCommand r_a_com; RemoveCustomerCommand r_c_com; RemoveEmployeeCommand r_e_com;
 	Repository<Author> authorRepository = Repository<Author>(true);
 	Repository<Customer> customerRepository = Repository<Customer>(true);
 	Repository<Employee> employeeRepository = Repository<Employee>(true);
@@ -45,7 +54,4 @@ public:
 	void ChangeTitle();
 	void ChangeIndexation();
 	void ChangePointer();
-
 };
-
-#endif // !MENU_H
