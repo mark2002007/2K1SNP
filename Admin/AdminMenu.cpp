@@ -110,7 +110,7 @@ void Menu::RemoveEmployee() {
 void Menu::ShowMenu() {
 	//Presets
 	bool exit = false;
-	int rowN = 5, pPos = 1;
+	int rowN = 6, pPos = 1;
 	char user_input;
 	while (!exit) {
 		//Cout Menu
@@ -133,6 +133,9 @@ void Menu::ShowMenu() {
 				cout << "Settings";
 				break;
 			case 5:
+				cout << "Redo    ";
+				break;
+			case 6:
 				cout << "Exit    ";
 				break;
 			}
@@ -164,6 +167,9 @@ void Menu::ShowMenu() {
 				ShowSettings();
 				break;
 			case 5:
+				CommandLog::GetInstance().DoLast();
+				break;
+			case 6:
 				exit = true;
 				break;
 			}
@@ -455,46 +461,46 @@ void Menu::ChangePointer() {
 void AddBookCommand::execute()
 {
 	m->AddBook();
-	CommandLog::GetInstance().Log(new AddBookCommand);
+	CommandLog::GetInstance().Log(new AddBookCommand(m));
 }
 
 void AddAuthorCommand::execute() {
 	m->AddAuthor();
-	CommandLog::GetInstance().Log(new AddAuthorCommand);
+	CommandLog::GetInstance().Log(new AddAuthorCommand(m));
 }
 
 void AddCustomerCommand::execute()
 {
 	m->AddCustomer();
-	CommandLog::GetInstance().Log(new AddCustomerCommand);
+	CommandLog::GetInstance().Log(new AddCustomerCommand(m));
 }
 
 void AddEmployeeCommand::execute()
 {
 	m->AddEmployee();
-	CommandLog::GetInstance().Log(new AddEmployeeCommand);
+	CommandLog::GetInstance().Log(new AddEmployeeCommand(m));
 }
 
 void RemoveBookCommand::execute()
 {
 	m->RemoveBook();
-	CommandLog::GetInstance().Log(new RemoveBookCommand);
+	CommandLog::GetInstance().Log(new RemoveBookCommand(m));
 }
 
 void RemoveAuthorCommand::execute()
 {
 	m->RemoveAuthor();
-	CommandLog::GetInstance().Log(new RemoveAuthorCommand);
+	CommandLog::GetInstance().Log(new RemoveAuthorCommand(m));
 }
 
 void RemoveCustomerCommand::execute()
 {
 	m->RemoveCustomer();
-	CommandLog::GetInstance().Log(new RemoveCustomerCommand);
+	CommandLog::GetInstance().Log(new RemoveCustomerCommand(m));
 }
 
 void RemoveEmployeeCommand::execute()
 {
 	m->RemoveEmployee();
-	CommandLog::GetInstance().Log(new RemoveEmployeeCommand);
+	CommandLog::GetInstance().Log(new RemoveEmployeeCommand(m));
 }

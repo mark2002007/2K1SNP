@@ -2,7 +2,13 @@
 
 void CommandLog::DoLast()
 {
-	command_log[command_log.size() - 1]->execute();
+	if (command_log.size() != 0) 
+		command_log[command_log.size() - 1]->execute();
+	else {
+		system("cls");
+		cout << "Command Log is empty..." << endl;
+		system("pause");
+	}
 }
 
 void CommandLog::ShowLog()
